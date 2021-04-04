@@ -1,0 +1,26 @@
+1. #include<iostream>
+2. #include<fstream>
+3. using namespace std;
+4. int main()
+5. {
+6. 	ifstream in("e:\\demo.cpp");
+7. 	if (!in)
+8. 	{
+9. 		cout << "无法打开demo.cpp文件" << endl;
+10. 		return 1;
+11. 	}
+12. 	char len[999];
+13. 	in.getline(len, 999);
+14. 	int i = 1;
+15. 	ofstream out("e:\\demo1.prn");
+16. 	if (!out)
+17. 	{
+18. 		cout << "无法创建demo1.prn文件" << endl;
+19. 	}
+20. 	while(in)
+21. 	{
+22. 		out << i++ << ". " << len << endl;
+23. 		in.getline(len, 999);
+24. 	} 
+25. 	return 0;
+26. }	
